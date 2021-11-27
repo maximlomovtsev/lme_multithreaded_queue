@@ -1,6 +1,7 @@
 #pragma once
 
 #include <queue>
+#include <condition_variable>
 
 namespace mthread_queue
 {
@@ -22,6 +23,7 @@ public:
 
 private:
     std::queue<T> queue_;
+    std::mutex syncMutex_;
 };
 
 } // namespace mthread_queue
